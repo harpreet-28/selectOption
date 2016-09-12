@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dom and Events 8</title>
+</head>
+
+<body>
+    <select id="option1">
+        <option>Select</option>
+        <option>One</option>
+        <option>Two</option>
+        <option>Three</option>
+    </select>
+    <select id="option2">
+        <option>Select</option>
+        <option>hey</option>
+        <option>yay!!</option>
+        <option>way</option>
+    </select>
+    <input type="button" id="btn" value="VALIDATE">
+    <script>
+    var _id = function _id(id) {
+        return document['getElementById'](id)
+    }
+    var first = _id('option1');
+    var second = _id('option2');
+    var btn = _id('btn');
+
+    function select() {
+        var checkFirst = first.selectedIndex;
+        var checkSecond = second.selectedIndex;
+        if (checkFirst === "Select" || checkSecond === "Select") {
+
+        } else {
+            var strUser1 = first.options[first.selectedIndex].text;
+            var strUser2 = second.options[second.selectedIndex].text;
+            alert(strUser1 + "," + strUser2);
+
+
+        }
+    }
+
+
+    btn['addEventListener']('click', select, false);
+    </script>
+</body>
+
+</html>
